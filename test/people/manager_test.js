@@ -18,7 +18,7 @@ describe("Manager", function() {
 
     it("should include @contact", function() {
       expect(jane.contact).to.eql("123-4567");
-    })
+    });
   });
 
   describe("inheriting from Person", function(){

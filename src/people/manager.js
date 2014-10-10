@@ -2,26 +2,23 @@ var Person = require("./person");
 var Building = require("../rental_property/building");
 
 function Manager(name, contact) {
-  // inherit name and contact
-  // ...
-  // manager manages an 'array' of buildings
-  // ...
-
+  Person.call(this,name,contact);
+  this.buildings = [];
 }
 
 // Set prototype and constructor
 // ...
+Manager.prototype = new Person();
+Manager.prototype.constructor = Manager;
 
-Manager.prototype.addBuilding = function(building) {
-  // check if building is an INSTANCEOF a Building
-  // ...
-  return this;
+Manager.prototype.addBuilding = function(building){
+  if (building instanceof Building) {
+   this.buildings.push(building);
+  }
 };
 
 Manager.prototype.removeBuilding = function(building) {
-  // remove building
-  // ...
-  return this;
+  this.buildings.splice(this.buildings.indexOf(building),1);
 };
 
 module.exports = Manager;

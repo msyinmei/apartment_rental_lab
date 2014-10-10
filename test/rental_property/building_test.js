@@ -7,17 +7,17 @@ var expect = require("chai").expect,
     Tenant = app.Tenant;
 
 describe("Building", function(){
-    var manager, 
-      tenant, 
-      contactOne, 
+    var manager,
+      tenant,
+      contactOne,
       contactTwo,
       myBuilding,
       myUnit;
 
     beforeEach(function(){
-      manager = new Manager("Jane Doe", "123-4567"), 
-      tenant = new Tenant("Jackie Adams", "123-7654"),  
-      contactOne = new Person("Anna Adams", "765-4321"), 
+      manager = new Manager("Jane Doe", "123-4567"),
+      tenant = new Tenant("Jackie Adams", "123-7654"),
+      contactOne = new Person("Anna Adams", "765-4321"),
       contactTwo = new Person("Devin Daniels", "765-1234")
       myBuilding = new Building("123 Gotham Ave");
       myUnit = new Unit("806", myBuilding, 400, 2000);
@@ -38,7 +38,7 @@ describe("Building", function(){
       });
     });
 
-    describe("#getManger", function(){
+    describe("#getManager", function(){
       it("should return the manager", function(){
         myBuilding.setManager(manager);
         expect(myBuilding.getManager()).to.eql(manager);
